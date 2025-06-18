@@ -36,15 +36,15 @@ Ensure your training file (`med_qa.jsonl`) follows this format (one JSON object 
 {"instruction": "Describe symptoms of eczema", "output": "Itchy, inflamed skin, often red and dry."}
 ```
 
+The dataset used in this project is available in the `Notebook` folder of this repository.
+
 ### 2. Fine-tune the model
 
-Open the Jupyter notebook:
+Open the Jupyter notebook located at `Notebook/medqa_train.ipynb`.  
+Run all cells to train and save the fine-tuned GPT-2 model.  
+You can push the trained model to your Hugging Face account for backup and reuse.
 
-```bash
-jupyter notebook Notebook/medqa_train.ipynb
-```
-
-Run all cells to train and save the fine-tuned GPT-2 model.
+Example trained model: [Aranya31/gpt2-medqa-ft](https://huggingface.co/Aranya31/gpt2-medqa-ft)
 
 ### 3. Build and run the API server
 
