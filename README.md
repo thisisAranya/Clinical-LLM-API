@@ -12,10 +12,10 @@ This project demonstrates the end-to-end process of fine-tuning a lightweight la
 
 ```
 clinical-llm-api/
-├── data/clinical_qa.jsonl     # Sample clinical QA training data
-├── training/train.py          # LoRA fine-tuning script
-├── app/main.py               # FastAPI inference API
-├── Dockerfile                # Docker container setup
+├── Notebook/train.py             # LoRA fine-tuning script
+├── Notebook/clinical_qa.jsonl    # Sample clinical QA training data
+├── app/main.py                   # FastAPI inference API
+├── Dockerfile                    # Docker container setup
 ├── requirements.txt
 └── README.md
 ```
