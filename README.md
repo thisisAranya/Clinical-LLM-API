@@ -1,4 +1,4 @@
-# Clinical LLM API: Fine-Tuning & Deployment for Medical QA
+# Medical-GPT: GPT tailored for medical Q&A
 
 This project demonstrates the end-to-end workflow of fine-tuning a lightweight GPT-2 model for clinical question answering and deploying it as a REST API.
 
