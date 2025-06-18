@@ -16,11 +16,9 @@ This project demonstrates the end-to-end workflow of fine-tuning a lightweight G
 ```
 clinical-llm-api/
 ├── Notebook/
-│   ├── train.py                 # GPT-2 fine-tuning script (supervised)
-│   ├── medqa_train.jsonl       # Training data in JSONL format
-│   └── medqa_val.jsonl         # Validation data in JSONL format
-├── app/
-│   └── main.py                 # FastAPI inference API
+│   ├── medqa_train.ipynb                 # GPT-2 fine-tuning script (supervised)
+│   ├── med_qa.jsonl       # Training data in JSONL format
+├── main.py                 # FastAPI inference API
 ├── Dockerfile                  # Docker container configuration
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Project documentation
