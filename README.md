@@ -1,12 +1,12 @@
-# Simple MedQA-GPT: GPT tailored for medical Q&A
+# Simple MedQA-GPT: GPT Tailored for Medical Q&A
 
 This project demonstrates the end-to-end workflow of fine-tuning a lightweight GPT-2 model for clinical question answering and deploying it as a REST API.
 
 ## ✨ Features
 
 - Fine-tunes a **GPT-2** model on custom clinical QA data  
-- Uses Hugging Face `Trainer` for simple supervised learning  
-- FastAPI backend serves real-time inference  
+- Uses Hugging Face `Trainer` within a Jupyter Notebook  
+- FastAPI backend for real-time inference  
 - Dockerized setup for easy deployment
 
 ---
@@ -14,11 +14,11 @@ This project demonstrates the end-to-end workflow of fine-tuning a lightweight G
 ## 📁 Project Structure
 
 ```
-clinical-llm-api/
+simple-medqa-gpt/
 ├── Notebook/
-│   ├── medqa_train.ipynb                 # GPT-2 fine-tuning script (supervised)
-│   ├── med_qa.jsonl       # Training data in JSONL format
-├── main.py                 # FastAPI inference API
+│   ├── medqa_train.ipynb       # Jupyter notebook for fine-tuning GPT-2
+│   └── med_qa.jsonl            # Training data in JSONL format
+├── main.py                     # FastAPI inference API
 ├── Dockerfile                  # Docker container configuration
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Project documentation
@@ -30,7 +30,7 @@ clinical-llm-api/
 
 ### 1. Prepare your dataset
 
-Make sure your training/validation files are in the following format (one JSON object per line):
+Ensure your training file (`med_qa.jsonl`) follows this format (one JSON object per line):
 
 ```json
 {"instruction": "Describe symptoms of eczema", "output": "Itchy, inflamed skin, often red and dry."}
@@ -38,17 +38,19 @@ Make sure your training/validation files are in the following format (one JSON o
 
 ### 2. Fine-tune the model
 
+Open the Jupyter notebook:
+
 ```bash
-python Notebook/train.py
+jupyter notebook Notebook/medqa_train.ipynb
 ```
 
-This script uses Hugging Face’s `Trainer` to fine-tune GPT-2. Adjust batch size, epochs, or max token length in the script as needed.
+Run all cells to train and save the fine-tuned GPT-2 model.
 
 ### 3. Build and run the API server
 
 ```bash
-docker build -t clinical-llm .
-docker run -p 8000:8000 clinical-llm
+docker build -t simple-medqa-gpt .
+docker run -p 8000:8000 simple-medqa-gpt
 ```
 
 ### 4. Query the API
@@ -66,8 +68,9 @@ curl -X POST http://localhost:8000/infer \
 - **Python** – Core development language  
 - **Hugging Face Transformers** – Model training and inference  
 - **FastAPI** – High-performance API backend  
-- **Docker** – Deployment and containerization  
-- **PyTorch** – Deep learning framework under the hood
+- **Docker** – Containerization and deployment  
+- **PyTorch** – Deep learning framework under the hood  
+- **Jupyter Notebook** – Interactive development for training
 
 ---
 
